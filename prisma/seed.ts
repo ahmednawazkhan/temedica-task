@@ -16,7 +16,7 @@ async function main() {
         description: drug.description,
         released: new Date(drug.released),
         diseases: {
-          connectOrCreate: drug.diseases.map((diseaseName) => {
+          connectOrCreate: drug.diseases.map((diseaseName: string) => {
             return {
               where: { name: diseaseName },
               create: { name: diseaseName },
